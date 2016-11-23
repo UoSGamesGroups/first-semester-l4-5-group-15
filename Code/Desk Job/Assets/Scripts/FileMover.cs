@@ -9,9 +9,11 @@ public class FileMover : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDra
 {
     public enum FileType
     {
-        Circle,
-        Square,
-        Triangle
+        Safe,
+        Storage,
+        Tree,
+        Mail,
+        Car
     };
 
     public static FileMover DraggedItem;
