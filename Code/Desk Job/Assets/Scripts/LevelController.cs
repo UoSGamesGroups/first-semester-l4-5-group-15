@@ -14,6 +14,7 @@ public class LevelController : MonoBehaviour {
     public GameObject[] extraEmails;
     public RectTransform CanvasTransform;
     public float deactivateTimer = 5;
+    public int numFiles;
 
     // Use this for initialization
     void Start () {
@@ -39,9 +40,9 @@ public class LevelController : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
-        if (lvl != currentLvl)
+        if (numFiles == 0)
         {
-            currentLvl = lvl;
+            emails[lvl-1].gameObject.SetActive(true);
             LevelInit();
         }
 	}
@@ -54,8 +55,10 @@ public class LevelController : MonoBehaviour {
             GameObject newFile = Instantiate(Prefabs[Random.Range(0,Prefabs.Length)], transform.position, Quaternion.identity) as GameObject;
             newFile.transform.SetParent(CanvasTransform);
             newFile.GetComponent<FilePosition>().SetPosition(CanvasTransform.sizeDelta);
+            numFiles++;
         }
-        Debug.Log("Instantiated " + lvl*Difficulty + " objects");
+        Debug.Log("Instantiated " + numFiles + " objects");
+        lvl++;
 
     }
 

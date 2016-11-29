@@ -6,6 +6,7 @@ using System;
 public class FolderDrop : MonoBehaviour, IDropHandler {
 
     public FileMover.FileType Type;
+    public LevelController Joice;
 
     public void OnDrop(PointerEventData eventData)
     {
@@ -14,6 +15,7 @@ public class FolderDrop : MonoBehaviour, IDropHandler {
             Debug.Log("You dragged it to the right place!");
             Destroy(FileMover.DraggedItem.gameObject);
             FileMover.DraggedItem = null;
+            Joice.numFiles--;
         }
     }
 }

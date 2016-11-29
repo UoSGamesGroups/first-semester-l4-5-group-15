@@ -25,5 +25,6 @@ public class FilePosition : MonoBehaviour {
         float yPos = Random.Range(top + height, bottom - height);
 
         transform.localPosition = new Vector2(xPos, yPos);
+
     }
 }
