@@ -5,7 +5,7 @@ public class emailDeactivation : MonoBehaviour {
 
     public int deactivateTimer = 5;
     // Use this for initialization
-    void Start () {
+    void OnEnable () {
         Debug.Log("Start");
         StartCoroutine (emailViewer());
 
@@ -14,8 +14,6 @@ public class emailDeactivation : MonoBehaviour {
     IEnumerator emailViewer()
     {
         Debug.Log("Timer started");
-
-
         yield return new WaitForSeconds(deactivateTimer);
 
         gameObject.SetActive(false);
