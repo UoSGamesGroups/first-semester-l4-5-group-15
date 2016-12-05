@@ -14,7 +14,7 @@ public class LevelController : MonoBehaviour {
     public GameObject[] emails;
     public GameObject[] extraEmails;
     public RectTransform CanvasTransform;
-    public float deactivateTimer = 5;
+    public float deactivateTimer = 3;
     public int numFiles;
     int timeChecker;
 
