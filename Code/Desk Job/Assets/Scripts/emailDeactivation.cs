@@ -3,21 +3,11 @@ using System.Collections;
 
 public class emailDeactivation : MonoBehaviour {
 
-    public int deactivateTimer = 5;
+    public GameObject Email;
     // Use this for initialization
-    void OnEnable () {
+    void DisableEmail () {
         Debug.Log("Start");
-        StartCoroutine (emailViewer());
-
-    }
-
-    IEnumerator emailViewer()
-    {
-        Debug.Log("Timer started");
-        yield return new WaitForSeconds(deactivateTimer);
-
-        gameObject.SetActive(false);
-        Debug.Log("Gameobject set to deactive");
+        Email.gameObject.SetActive(false);
 
     }
 }
